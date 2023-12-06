@@ -1,0 +1,142 @@
+Q5. Describe the process of contributing to any open source on github in a step by step manner.
+
+Step By Step Guide
+
+Step 1: Sign in to GitHub
+Sign in to your GitHub account, or create a free GitHub account if you don’t have one.
+
+Step 2: Fork the project repository
+Find project’s repository on GitHub, then “fork” it by clicking the fork button in the top right corner:
+This creates the final copy of the project in your GitHub account. In the upper left corner, you’ll see that you’re now looking at a repository in your account:
+
+Step 3: Clone your fork
+While in your repository, click the green “Clone or download” button and copy the HTTPS URL:
+
+Using Git on your local machine, clone your fork using the URL you just copied:
+git clone URL_OF_FORK
+
+For example, I used the git clone https://github.com/anmolbhatt0/Python-1
+
+Cloning copies the repository files (and commit history) from GitHub to your local machine and will be downloaded into a subdirectory of your working directory, and the subdirectory will have the same name as the repository.
+
+(If you experience problems with this step, read the Setup Git page in GitHub documentation.)
+
+Step 4: Navigate to your destination
+Once the clone has been downloaded to the subdirectory of your active directory, you can navigate through it using: cd NAME_OF_REPOSITORY.
+
+For example, I used the cd TheAlgorithms.
+
+Step 5: Check that your fork is the “Origin” remote
+You will be syncing your local repository with both project repository (on GitHub) and your fork (also on GitHub). The URLs that point to these repositories are called “remotes”. Specifically, the repository of the project is called the “upstream” remote, and your fork is called the “Origin” remote.
+
+When you were cloning your fork, that should have automatically set your fork as the “original” remote. Use git remote -v to show your current remote. You should see the URL of your fork (copied in step 3) next to the word “Origin”.
+
+If you do not see the “Origin” remote, you can add it using: git remote add Origin URL_OF_FORK.
+
+(If you experience problems with this step, read Managing Remote repository page in GitHub’s documentation.)
+
+Step 6: Add the project repository as the “upstream” remote
+Go to your fork on GitHub, then click the “forked from” link to return to the project’s repository:
+
+While in the project repository, click the green Clone or Download button and copy the HTTPS URL:
+
+Cloning the project repository with HTTPS.
+
+Add the project repository as the “upstream” remote using: git remote add upstream URL_OF_PROJECT
+
+Use git remote -v to check that you now have two remotes: an origin that points to your fork, and the upstream that points to the project repository.
+
+Step 7: Pull the latest changes from upstream into your local repository
+Before you start making any changes to your local files, it is a good practice to first sync your local repository with the project repository. Use the git pull upstream master to “pull” any changes from the “master” branch of the “upstream” to your local repository.
+
+If you fork and clone a project repository a few minutes ago, there is very little chance of a change, in which case Git will report that your local repository is “already up to date”. But if there are any changes, they will be automatically merged to your local repository.
+
+Step 8: Create a new branch
+Instead of making changes to the “master” branch of the project, it is a good practice to create your own branch. This creates an environment of ​​your work separated from the master branch.
+
+Use git checkout -b BRANCH_NAME to create a new branch and switch immediately. The name of the branch should give a brief overview of what you’re working on, and should not contain any spaces.
+
+For example, I used git checkout -b doc-fixes because I made some small fixes to the documentation.
+
+Use the git branch to show your local branches. You should see your new branch and “master”, and your new branch should have an asterisk next to it to indicate that it has been “checked out” (meaning you are working on it).
+
+Step 9: Make changes in your local repository
+Use the text editor or IDE to make customized changes to existing files in your local repository. Because you checked out a branch in the previous step, any edits you make will only affect that branch.
+
+Step 10: Commit your changes
+After making a set of changes, use git add -A to stage your changes and git commit -m “DESCRIPTION OF CHANGES” to commit.
+
+For example, I used git commit -m “fix typos in set_config docstring” in one of my commits.
+
+If you are making multiple sets of edits, it is a good practice to make a commit after each set.
+
+Step 11: Push your changes to your fork
+When you are done making all your changes, upload these changes to your fork using the git Push Origin BRANCH_NAME. This “pushes” your changes to the “BRANCH_NAME” branch of “Origin” (which is your fork on GitHub).
+
+For example, I used the Git Push Origin doc-fixes.
+
+Step 12: Begin the pull request
+Return to your fork on GitHub, and refresh the page. You can see a highlighted area showing your recently pushed branch:
+
+Click the green compare and pull request button to start the pull request.
+
+(Alternatively, if you do not see this highlighted area, you can switch to your branch using the Branch button and click the new pull request button.)
+
+Step 13: Create the pull request
+When you open a “pull application”, you make a “request” that the project repository “pull” changes from your fork. You will see that project repository are listed as “base repository”, and your fork is listed as “head repository”:
+
+Before submitting the pull request, you should first describe the changes you have made (rather than asking the project maintainers to see for themselves). You should write a descriptive title for your pull request, and then enter more details in the pull request body. If there are GitHub related issues, be sure to mention those by number. The body can include the Markdown formatting, and then click the Preview tab to see what it will look like.
+
+On the right, you can see a link to the contributing guide for the project. This is very important for you to learn when submitting a large code (rather than just fixing a typo), but it is still worth scanning through at this time.
+
+At the bottom of the pull request form, you’ll see a list of commits you’ve made in your branch, as well as “diffs” of all the files you’ve changed.
+
+If all looks good, click the green button “Create a pull request”!
+
+Step 14: Review the pull request
+You have now made a pull request, which is kept in the project’s repository (not in your last fork). It is a good practice to read what you have written, as well as to click on the Commits and Files changed tab to review the content of your pull request.
+
+If you see that you have omitted some important information, you can click on the 3 dots in the top right corner to edit the description of your pull request.
+
+Step 15: Add more commits to your pull request
+You can continue to add more to your pull request even after you open it! For example, project maintainers may ask you to make certain changes, or you may simply be considering a change you forgot to apply.
+
+Start by going back to your local repository, then use the git branch command to see which branch is currently checked out. If you are currently in a master branch (rather than the branch you created), then use the git BRANCH_NAME to switch.
+For example, I used the git checkout doc-fixes.
+
+After that, you should repeat steps 9 to 11: make changes, commit, and push them on your fork.
+
+Finally, return to your open pull request on GitHub and refresh the page. You will see that your new commits is automatically added to the pull request.
+
+Step 16: Discuss the pull request
+If there are any questions or discussions about your pull request from project maintainers, you can add them to the conversation using the comment box at the bottom of the pull request.
+
+If there are comments on the line about any changes you have made, you can also respond to those as well.
+
+Step 17: Delete your branch from your fork
+Once the project maintainers approve your pull request (congratulations!), They will merge your proposed changes into the project’s master branch and close your pull request.
+
+You will be given the option to delete your branch from your fork, because it no longer works.
+
+Click the Delete branch button.
+
+Step 18: Delete your branch from your local repository
+You should also delete the branch you created in your local repository, so that you don’t accidentally start working on it the next time you want to contribute to this project.
+
+First, switch to the master branch: git checkout master.
+After that, delete the branch you created: git branch -D BRANCH_NAME.
+For example, I used git branch -D doc-fixes.
+
+Step 19: Sync your fork with the project repository
+At the moment, your fork does not match the master branch for keeping the project.
+
+To get it back in sync, you must first use Git to pull the latest change from “upstream” (the project repository) to your local repository: git pull upstream master.
+
+After that, Push those changes from your local repository to “Origin” (your fork): git push origin master.
+
+When you return to your fork on GitHub, you will see that the master branch is “even” the master branch with the project repository.
+
+This step is not entirely necessary, as you will push the change from the upstream before making your next contribution to this project (step 7). However, this step is useful if you are going to clone your fork from another machine.
+
+Congratulations!
+Congratulations on making your first open contribution! 🎉 Please share the link with your successful pull request in the comments section below. If you are experiencing unexpected problems, I would love to hear about it so I can continue to improve this guide.

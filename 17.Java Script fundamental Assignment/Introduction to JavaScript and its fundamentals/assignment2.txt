@@ -1,0 +1,56 @@
+Explain the key differences between JavaScript and HTML. Provide examples of situations where
+you would use each.
+
+
+JavaScript and HTML are both essential technologies in web development, but they serve different purposes.
+
+HTML (Hypertext Markup Language):
+
+HTML is a markup language used for structuring content on the web.
+It provides the basic building blocks of a web page, defining elements like headings, paragraphs, images, links, and more.
+HTML is static, meaning it creates the structure and layout of a webpage but doesn't handle dynamic behavior or interactivity.
+Example:
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Web Page</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a simple web page.</p>
+    <img src="example.jpg" alt="An example image">
+</body>
+</html>
+JavaScript:
+
+JavaScript is a programming language that adds interactivity and dynamic behavior to web pages.
+It runs on the client side, allowing developers to manipulate the content, respond to user actions, and update the page without a full reload.
+JavaScript is used for tasks like form validation, creating animations, handling user input, and making asynchronous requests to servers.
+Example:
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Web Page</title>
+    <script>
+        function greet() {
+            var name = prompt("What's your name?");
+            alert("Hello, " + name + "!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Interactive Web Page</h1>
+    <button onclick="greet()">Say Hello</button>
+</body>
+</html>
+In this example, HTML sets up the structure of the page, while JavaScript adds interactivity by prompting the user for their name and displaying a personalized greeting.
+
+So, in summary, HTML is for structuring content, while JavaScript is for adding behavior and interactivity to that content. They often work together to create dynamic and engaging web experiences.
+
+
+
+

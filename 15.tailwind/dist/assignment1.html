@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+    <style>
+        @media  (max-width: 640px) {
+            div.example {
+                display: none;
+            }
+            div.mobile{
+                width: 200vw;
+                margin: auto ;
+                padding: auto;
+                float:none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body>
+    <div class="ml-80 mobile">
+        <div class="float-left w-4/12 h-{100vh} text-center">
+            <h1 class="text-2xl p-2">Login</h1>
+            <p class="opacity-70 p-2">Enter your credential to access your account</p>
+            <button type="submit" class="mb-9 mt-5 box-border w-full p-2 border-2 rounded-md	">
+                <img class="w-6 h-6 mr-3 inline-block"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/640px-Google_%22G%22_Logo.svg.png"
+                    alt="">
+                Login with Google</button>
+
+            <span>
+                <hr class="inline-block w-5/12 float-left">
+            </span>
+            <p class="inline-block mb-9">Or</p><span>
+                <hr class="inline-block w-5/12 float-right">
+            </span>
+            <p class="inline-block"></span>
+
+        </div>
+        <div class="  w-4/12 h-{100vh}">
+            <form action="">
+                <label class="" for="">Email Address</label><br>
+                <input class="mb-5 rounded-md box-border w-full p-1 border-2" placeholder="email@gmail.com" type="text">
+                <a class="float-right text-blue-700" href="">Forget Password?</a><br>
+                <label for="">Password</label><br>
+                <input class="rounded-md box-border w-full p-1 border-2" placeholder="Password" type="text"><br>
+                <button class="mt-5 mb-4 rounded-md box-border w-full p-2 bg-blue-500 text-white">Login</button>
+            </form>
+            <p class=" text-center opacity-75">Don't have an account? <a class="opacity-100 font-semibold"
+                    href="">Register here</a></p>
+        </div>
+        <div class="absolute right-0 top-0 w-5/12 h-{100vh} example">
+            <img src="https://img.freepik.com/free-photo/young-happy-woman-with-good-idea-sign-white-shirt-full-portrait_186202-4377.jpg?w=360&t=st=1698325460~exp=1698326060~hmac=4b7b600658150cfcd0de90a0f014a0a153a4d99ba8b937860cf5576191f4261a"
+                alt="">
+        </div>
+    </div>
+</body>
+
+</html>

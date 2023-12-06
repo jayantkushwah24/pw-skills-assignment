@@ -1,0 +1,27 @@
+Question 4: What is the purpose of declaring variables in JavaScript, and how do you declare them using the
+'let' keyword?
+
+Declaring variables in JavaScript is essential for storing and manipulating data within a program. Variables serve as containers for values, allowing you to store information and reference it throughout your code. The let keyword is one of the ways to declare variables in JavaScript.
+
+Purpose of declaring variables:
+
+Store Data: Variables allow you to store different types of data, such as numbers, strings, or objects.
+
+Manipulate Data: You can perform operations and manipulate the stored data using variables.
+
+Reuse and Reference: Variables enable you to reuse and reference values throughout your code, promoting code organization and readability.
+
+Dynamic Values: JavaScript variables are dynamic, meaning you can change their values during the execution of your program.
+
+Declaring variables using the 'let' keyword:
+To declare a variable in JavaScript using the let keyword, you use the following syntax:
+
+
+let variableName;
+Here, let is the keyword indicating the variable declaration, and variableName is the name you give to your variable. You can also initialize the variable with a value at the time of declaration:
+
+
+let age = 25;
+In this example, age is the variable name, and it is assigned the value 25. The let keyword is used to declare the variable.
+
+It's worth noting that the let keyword is block-scoped, meaning it is limited to the block (portion of code between curly braces) in which it is defined. This is in contrast to the var keyword, which has function scope. The introduction of let in ES6 improved variable scoping and made it more predictable in JavaScript.
