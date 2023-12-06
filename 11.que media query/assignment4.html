@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+        }
+        @media screen and (max-width: 768px) {
+            .main{
+                display: flex;
+                flex-direction: column;
+            }
+            .box{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div style="background-color: red;" class="box one">Box1</div>
+        <div style="background-color: green;" class="box two">Box2</div>
+        <div style="background-color: blue;" class="box three">Box3</div>
+        <div style="background-color: rgb(178, 103, 27);" class="box four">Box4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <style>
+        .img-gallery{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .img-gallery img{
+            width: 30%;
+            margin: 10px;
+        }
+        @media screen and (max-width : 800px){
+            .img-gallery img{
+                width: 45%;
+            }
+        }
+        @media screen and (max-width : 500px){
+            .img-gallery img{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="img-gallery">
+        <img src="https://fastly.picsum.photos/id/70/200/300.jpg?hmac=8-6v4fVxk6exesGT53s01yaJuediQIreacSHqZY3mV4" alt="img1">
+        <img src="https://fastly.picsum.photos/id/70/200/300.jpg?hmac=8-6v4fVxk6exesGT53s01yaJuediQIreacSHqZY3mV4" alt="img2">
+        <img src="https://fastly.picsum.photos/id/70/200/300.jpg?hmac=8-6v4fVxk6exesGT53s01yaJuediQIreacSHqZY3mV4" alt="img3">
+    </div>
+</body>
+</html>

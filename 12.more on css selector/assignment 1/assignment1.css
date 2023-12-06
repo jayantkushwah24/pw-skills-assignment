@@ -1,0 +1,40 @@
+/* B(a) */
+li a{
+    color: red;
+}
+/* B(b) */
+nav > h2{
+    color: brown;
+    background-color: yellow;
+}
+/* B(c) */
+div + p{
+    color: red;
+}
+/* C(a) */
+a[target]{
+    color: red;
+    text-decoration: none;
+}
+/* C(b) */
+a[class="active"]{
+    color: blue;
+    text-decoration: underline;
+}
+/* C(c) */
+a[target=_self]{
+    background-color: yellow;
+}
+/* D(a) */
+p:last-child::after{
+    content: "...";
+}
+/* D(b) */
+li::marker{
+    color: green;
+}
+/* D(c) */
+p:nth-child(even)::first-letter{
+    color: red;
+    font-size: 30px;
+}
