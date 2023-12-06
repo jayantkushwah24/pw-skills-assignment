@@ -1,0 +1,4 @@
+HTML TAG :- tag is the starting and ending parts of the html. Whatever written inside <> is tag. ex- <b></b>
+
+HTML ELEMENT :- tag is the starting and ending parts of the html and there is also a content between them . 
+Starting tag, ending tag and content makes a complete html element <h1>Heading</h1>

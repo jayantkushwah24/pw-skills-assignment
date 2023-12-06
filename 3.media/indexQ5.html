@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+</head>
+
+<body>
+    <form for="firstName">
+        <label for="firstName">First Name:
+            <input type="text" name="firstName" placeholder="Jayant" id="firstName" required minlength="3" max="20">
+        </label> <br>
+        <label for="lastName">Last Name:
+            <input type="text" name="lastName" placeholder="Kushwah" id="lastName"  required min="3" max="20">
+        </label> <br>
+        <label for="email">Email:
+            <input type="text" name="email" placeholder="jayant@kushwah.com" id="email" required>
+        </label> <br>
+        <label for="password">Password:
+            <input type="text" name="password" placeholder="********" id="password" required min="8">
+        </label> <br>
+        <label for="confirmPassword">Password:
+            <input type="text" name="confirmPassword" placeholder="********" id="confirmPassword" required min="8">
+        </label> <br>
+        <label for="age">
+            <input type="text" name="age" placeholder="23" id="age" required min="0" max="150">
+        </label> <br>
+        <label for="">Gender:
+            <input type="radio" id="male" value="male" name="gender" checked>
+            <label for="male">Male</label>
+            <input type="radio" id="female" value="female" name="gender">
+            <label for="female">Female</label>
+            <input type="radio" name="other" value="other" name="gender">
+            <label for="other">Other</label>
+        </label>
+        <br>
+        <label for="terms">terms:
+            <input type="checkbox" id="terms" required> I agree to accept to terms and conditions.
+        </label>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+Q2. Explain the role of the following key properties in the flexbox layout model
+    1.justify-content
+    2.align-items
+    3.gap
+    4.flex-direction
+    5.flex-wrap
+
+ANS:- 1.justify-content:- it is a sub-property of the Flexible Box Layout module.
+    It defines the alignment along the main axis. It helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+
+2.align-items:-this property defines the default behavior for how items are laid out along the cross axis (perpendicular to the main axis).
+    Imagine a horizontal flexbox layout. That horizontal flow is the main axis, so align-items is the alignment opposite that, on the vertical axis. Bear in mind that changes when the main axis changes, and the cross axis changes with it.
+    You can think of align-items as the justify-content version for the cross-axis (perpendicular to the main-axis).
+
+3.Gap:-The gap property in CSS is a shorthand for row-gap and column-gap, specifying the size of gutters, which is the space between rows and columns within grid, flex, and multi-column layouts.
+
+4.flex-direction:- this property is a sub-property of the Flexible Box Layout module. It establishes the main-axis, thus defining the direction flex items are placed in the flex container.
+    The flex-direction property accepts four possible values:
+    i.row: same as text direction (default)
+    ii.row-reverse: opposite to text direction
+    iii.column: same as row but top to bottom
+    iv.column-reverse: same as row-reverse top to bottom
+    Note that row and row-reverse are affected by the directionality of the flex container. If its text direction is ltr, row represents the horizontal axis oriented from left to right, and row-reverse from right to left; if the direction is rtl, it’s the opposite.
+
+5.flex-wrap:- this property is a sub-property of the Flexible Box Layout Module. It defines whether the flex items are forced in a single line or can be flowed into multiple lines. If set to multiple lines, it also defines the cross-axis which determines the direction new lines are stacked in, aiding responsiveness layout behavior without CSS media queries.
+    Initial value: nowrap
+    Applies to: flex containers
+    Inherited: no
+    Computed value: as specified
+    Animation type: discrete
+
+    nowrap (default): single-line which may cause the container to overflow
+    wrap: multi-lines, direction is defined by flex-direction
+    wrap-reverse: multi-lines, opposite to direction defined by flex-direction

@@ -1,0 +1,195 @@
+
+.icon {
+    position: relative;
+    left: 10%;
+}
+.image{
+    position: absolute;    
+    right: 0px;
+    top: 0px;
+    width: 696px;
+    height: 1036px;
+    flex-shrink: 0;    
+}
+.nav-bar {
+    color: var(--333333, #333);
+    position: absolute;
+    left: 550px;
+    top: 10px;
+}
+
+.ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    padding: 5px;
+    list-style: none;
+}
+
+.button-login {
+    border-radius: 5.069px;
+    background: var(--FB792B, #FB792B);
+    padding: 10.139px 15.208px;
+    gap: 10.139px;
+    color: var(--FFFFFF, #FFF);
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15.208px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.button-navbar {
+    padding: 10.139px 15.208px;
+    border-radius: 5.069px;
+    border: 1.014px solid rgba(51, 51, 51, 0.20);
+    background: var(--FFFFFF, #FFF);
+}
+
+.heading {
+    margin-top: 15vh;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    color: var(--333333, #333);
+    font-size: 48.667px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    left: 10%;
+}
+
+.sub-heading {
+    display: flex;
+    padding: ;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    left: 10%;
+    bottom: 50px;
+    gap: 10px;
+
+}
+
+.three-button {
+    position: relative;
+    padding: 10.139px 15.208px;
+    left: 10%;
+    gap: 20.139px;
+    bottom: 50px;
+}
+
+.b1 {
+    text-align: center;
+    text-justify:auto;
+    border-radius: 5.069px;
+    background: var(--213D77, #213D77);
+}
+
+.b2 {
+    border-radius: 5.069px;
+    border: 1.014px solid rgba(51, 51, 51, 0.50);
+    background: var(--FFFFFF, #FFF);
+}
+
+.b3 {
+    border-radius: 5.069px;
+    border: 1.014px solid rgba(51, 51, 51, 0.50);
+    background: var(--FFFFFF, #FFF);
+}
+
+.journey-details{
+    margin-bottom:30px ;
+    display: flex;
+}
+.ticket-detail{
+    margin-bottom:30px ;
+    display: flex;
+}
+.from{
+    position: relative;
+    left: 4vw;
+    bottom: 2vh;
+}
+.ksr-bang{
+    position: relative;
+    right:8vw;
+    top: 5.5vh;
+}
+.sync-svg{
+    margin: 20px;
+    position: relative;
+    right: 3vw;
+}
+.train-svg2{
+    margin-right: 20px;
+}
+.to{
+    position: relative;
+    left: 2.6vw;
+    bottom: 2vh;
+}
+.ksr-kasara{
+    position: relative;
+    top: 5.5vh;
+    right: 9.6vw;
+}
+.date{
+    position: relative;
+    left: 4vw;
+    bottom: 2vh;
+}
+.tuesday{
+    position: relative;
+    top: 5.5vh;
+    right: 8.7vw;
+}
+.class{
+    position: relative;
+    left: 3.7vw;
+    bottom: 2vh;
+}
+.ac-3tier{
+    position: relative;
+    top: 6vh;
+    right: 3vw;
+}
+.seat-type{
+    position: relative;
+    left: 5.7vw;
+    bottom: 2vh;
+}
+.ac-3tier2{
+    position: relative;
+    top: 5vh;
+    right: 8vw;
+}
+.search-train{
+    border-radius: 10.139px;
+    width: 618.472px;
+    height: 81.111px;
+    flex-shrink: 0;
+    background: var(--01BB0A, #01BB0A);    
+    color: #FFF;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-size: 25.347px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-transform: capitalize;    
+}
+
+

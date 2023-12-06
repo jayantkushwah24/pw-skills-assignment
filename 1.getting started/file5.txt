@@ -1,0 +1,2 @@
+The DOCTYPE declaration is an instruction to the web browser about what version of HTML the page is written in. 
+This ensures that the web page is parsed the same way by different web browsers. 

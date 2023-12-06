@@ -1,0 +1,4 @@
+When we don't want to render the code we use comments.
+
+We can comment html document by following :-
+<!-- <html></html> -->
