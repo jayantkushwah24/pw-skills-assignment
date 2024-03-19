@@ -32,7 +32,7 @@ function updateStudentInformation(id, newInfo) {
         console.log(`ID not found`);
     }
 }
-// updateStudentInformation( 3 , {firstName : "Kirti" , lastName : "Kushwah" , age : 21} )
+updateStudentInformation( 3 , {firstName : "Kirti" , lastName : "Kushwah" , age : 21} )
 
 function deleteStudentInformation(id) {
     let index = students.findIndex(student => student.id === id)
@@ -43,18 +43,26 @@ function deleteStudentInformation(id) {
         console.log(`ID not found`);
     }
 }
-// deleteStudentInformation(1)
+deleteStudentInformation(1)
 
 function listAllStudents() {
     students.forEach(student => {
         console.log(`ID: ${student.id}, Name: ${student.firstName}  ${student.lastName}, Age: ${student.age}, Grade: ${student.grade}`);
     });
 }
-// listAllStudents()
+listAllStudents()
 
 function findStudentsByGrade(grade) {
     return students.filter(student => student.grade == grade)
 
 }
 console.log(findStudentsByGrade("A"))
-// console.log(students);
+
+function averageAge(sum){
+    
+    students.forEach(element => {
+        sum += element.age ; 
+    });
+    return sum;
+}
+console.log(averageAge(0));
