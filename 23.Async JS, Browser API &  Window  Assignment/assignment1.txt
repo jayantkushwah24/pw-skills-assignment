@@ -1,0 +1,50 @@
+Q1. Define XMLHttpRequest object, and How is it used in AJAX?
+
+
+
+The XMLHttpRequest object is a built-in JavaScript API provided by web browsers that enables client-side scripts to interact with servers via HTTP or HTTPS. It allows you to send HTTP requests to a server, and receive and handle responses from the server, all without reloading the entire web page.
+
+Here's a breakdown of how XMLHttpRequest is typically used in AJAX (Asynchronous JavaScript and XML):
+
+Creating an XMLHttpRequest object:
+You first create an instance of the XMLHttpRequest object using the new keyword:
+
+
+var xhr = new XMLHttpRequest();
+Setting up the request:
+You then configure the request by specifying the HTTP method (e.g., GET, POST), the URL of the server-side resource, and any additional parameters:
+
+
+xhr.open('GET', 'https://example.com/data', true);
+The open() method initializes the request. The third parameter (true) indicates that the request should be asynchronous.
+
+Defining event handlers:
+You define event handlers to handle various states of the request:
+
+
+xhr.onload = function() {
+    // Handle the response when the request completes successfully
+};
+
+xhr.onerror = function() {
+    // Handle errors that occur during the request
+};
+Sending the request:
+After configuring the request and defining event handlers, you send the request to the server:
+
+
+xhr.send();
+Handling the response:
+Once the server responds to the request, the onload event handler (or onerror if an error occurs) is triggered. You can then access the response data using properties of the XMLHttpRequest object, such as responseText or responseXML:
+
+
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        // Request was successful
+        console.log(xhr.responseText);
+    } else {
+        // Request failed
+        console.error('Request failed with status:', xhr.status);
+    }
+};
+In summary, the XMLHttpRequest object provides a way to send HTTP requests from JavaScript, making it a fundamental part of AJAX, which allows for asynchronous communication between the client and server, enabling dynamic and interactive web applications.
