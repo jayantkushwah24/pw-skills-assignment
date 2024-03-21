@@ -1,0 +1,36 @@
+// Q2. Write a JavaScript program to make an AJAX request using the XMLHttpRequest object to fetch data
+// from a remote API (https://jsonplaceholder.typicode.com/users) and log a list of user names from the
+// response to the browser console and output.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+    const requestUrl = "https://jsonplaceholder.typicode.com/users"
+    
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText)
+            data.forEach(element => {
+                console.log("username : ",element.username);
+            });
+
+        }
+    }
+    
+    xhr.send()
+</script>
+
+</html>
