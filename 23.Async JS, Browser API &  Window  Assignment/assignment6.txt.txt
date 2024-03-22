@@ -1,0 +1,81 @@
+Q6.Describe the purpose and usage of the localStorage and sessionStorage APIs in web development. Give
+suitable examples for each.
+
+
+
+
+The localStorage and sessionStorage APIs are part of the Web Storage API, which provides web developers with a way to store key-value pairs locally within the user's browser. Both APIs offer similar functionalities but with differences in terms of data persistence and scope.
+
+localStorage:
+Purpose: The localStorage API is designed to store data persistently across browser sessions. Data stored using localStorage remains available even after the browser is closed and reopened, providing a long-term storage solution.
+
+Usage:
+
+Set an item in localStorage:
+
+
+localStorage.setItem('key', 'value');
+Get an item from localStorage:
+
+
+var value = localStorage.getItem('key');
+Remove an item from localStorage:
+
+
+localStorage.removeItem('key');
+Example:
+
+
+// Storing user preferences in localStorage
+localStorage.setItem('theme', 'dark');
+localStorage.setItem('language', 'en');
+
+// Retrieving user preferences from localStorage
+var theme = localStorage.getItem('theme');
+var language = localStorage.getItem('language');
+
+console.log(theme);     // Output: 'dark'
+console.log(language);  // Output: 'en'
+sessionStorage:
+Purpose: The sessionStorage API is designed to store data for the duration of a single browser session. Data stored using sessionStorage is available only within the same tab or window and is cleared when the tab or window is closed.
+
+Usage:
+
+Set an item in sessionStorage:
+
+
+sessionStorage.setItem('key', 'value');
+Get an item from sessionStorage:
+
+
+var value = sessionStorage.getItem('key');
+Remove an item from sessionStorage:
+
+
+sessionStorage.removeItem('key');
+Example:
+
+
+// Storing temporary data in sessionStorage
+sessionStorage.setItem('username', 'John');
+
+// Retrieving data from sessionStorage
+var username = sessionStorage.getItem('username');
+
+console.log(username); // Output: 'John'
+Comparison:
+Data Persistence:
+
+localStorage: Data persists across browser sessions.
+sessionStorage: Data is cleared when the browser session ends (i.e., when the tab or window is closed).
+Scope:
+
+Both localStorage and sessionStorage are scoped to the same origin (domain, protocol, and port). Data stored in one tab or window cannot be accessed by scripts running in other tabs or windows.
+Storage Limit:
+
+Both localStorage and sessionStorage have a storage limit of around 5-10 MB per origin, but this limit may vary between browsers.
+Use Cases:
+
+localStorage: Suitable for storing user preferences, settings, and data that needs to persist across browser sessions.
+sessionStorage: Suitable for storing temporary data, session-specific data, and data that needs to be cleared when the session ends.
+In summary, both localStorage and sessionStorage provide convenient mechanisms for storing data locally within the browser, with localStorage offering persistent storage across sessions and sessionStorage offering session-specific storage. Developers can choose the appropriate API based on the specific requirements of their web application.
