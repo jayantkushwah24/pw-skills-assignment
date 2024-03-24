@@ -3,7 +3,8 @@ public class varible{
         System.out.println("Jai Shree Ram");
         byte age = 24; //-2^7 to 2^7-1
         short height = 173; //2^15
-        int weight = 8379897; //2^15
+        int weight = 8379897; //2^31
+        long hairs = 765658586 // 2^63
         char letter = 'j';
         String name = "Jayant";
         boolean isMarried = true;
