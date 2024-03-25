@@ -9,56 +9,78 @@ public class someBasicQues {
         // checkTriangle(30, 90, 60);
         // leapYearOrNot(2100);
         // sumOfNumber(12345);
-        if (primeNumber(112222222)) {
-            System.out.println("Prime Number");
-        }else{
-            System.out.println("Not a Prime Number.");
-        }
+        // if (primeNumber(112222222)) {
+        //     System.out.println("Prime Number");
+        // } else {
+        //     System.out.println("Not a Prime Number.");
+        // }
+        nthFibonacci(500);
     }
-    static void oddOrEven(int num){
+
+    static void oddOrEven(int num) {
         if (num % 2 == 0) {
             System.out.println("Even");
-        }else{
+        } else {
             System.out.println("Odd");
         }
     }
-    static void checkTriangle(int a , int b , int c){
+
+    static void checkTriangle(int a, int b, int c) {
         if (a + b + c == 180 && a > 0 && b > 0 && c > 0) {
-           System.out.println("Valid Triangle");
-        }else{
+            System.out.println("Valid Triangle");
+        } else {
             System.out.println("Invalid Triangle");
         }
     }
-    static void leapYearOrNot(int year){
-        if (year % 400 == 0 || (year % 4 == 0  && year%400 ==0)) {
+
+    static void leapYearOrNot(int year) {
+        if (year % 400 == 0 || (year % 4 == 0 && year % 400 == 0)) {
             System.out.println("Leap year");
-        }else{
+        } else {
             System.out.println("Not leap year");
         }
     }
-    static void sumOfNumber(int num){
+
+    static void sumOfNumber(int num) {
         int sum = 0;
-        while(num >= 1 ){
+        while (num >= 1) {
             int lastDigit = num % 10;
             sum += lastDigit;
-            num /= 10 ; 
+            num /= 10;
         }
         System.out.println("Sum of digit : " + sum);
     }
-    static boolean primeNumber(int num){
+
+    static boolean primeNumber(int num) {
         System.out.print(num + " is ");
         if (num <= 1) {
             return false;
         }
-        for (int i = 2; i*i <= num; i++) {
+        for (int i = 2; i * i <= num; i++) {
             if (num % i == 0) {
                 return false;
             }
         }
         return true;
     }
-    static void fibonacci(int n){
-        if (n < 0) {
+
+    static void nthFibonacci(int n) {
+        int firstNum = 1;
+        int secondNum = 1;
+        if (n <= 0) {
+            System.out.println("Enter valid number.");
+        } else if (n == 1) {
+            System.out.println(n + "th fibonacci number is 1.");
+        } else if (n == 2) {
+            System.out.println(n + "th fibonacci number is 1.");
+        } else {
+            int sum = 0;
+            for (int i = 0; i < n - 2; i++) {
+                sum = firstNum + secondNum;
+                firstNum = secondNum;
+                secondNum = sum;
+            }
+            System.out.println(n + "th fibonacci number is "+ sum);
             
         }
     }
