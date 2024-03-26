@@ -5,7 +5,7 @@ public class patternProblem {
 
     public static void main(String[] args) {
         // pattern1(5);
-        pattern2(5);
+        pattern3(5);
     }
 
     static void pattern1(int n){
@@ -39,4 +39,23 @@ public class patternProblem {
     //  *********
      
     }
+    static void pattern3(int n){
+        int star = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < star; j++) {
+                    System.out.print("*");  
+            }
+            System.out.println();
+            if (i < n/2) {
+                star ++ ; 
+            } else{
+                star--;
+            } 
+        }
+    }
+    // *
+    // **
+    // ***
+    // **
+    // *
 }
