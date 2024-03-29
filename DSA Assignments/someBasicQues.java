@@ -10,11 +10,15 @@ public class someBasicQues {
         // leapYearOrNot(2100);
         // sumOfNumber(12345);
         // if (primeNumber(112222222)) {
-        //     System.out.println("Prime Number");
+        // System.out.println("Prime Number");
         // } else {
-        //     System.out.println("Not a Prime Number.");
+        // System.out.println("Not a Prime Number.");
         // }
-        nthFibonacci(500);
+        // nthFibonacci(500);
+        // armstrongNumber(153);
+        int arr[] = { 1, 2, 3, 4, 5 };
+        // reverseArray(arr);
+        rotateArray(arr, 3);
     }
 
     static void oddOrEven(int num) {
@@ -80,8 +84,49 @@ public class someBasicQues {
                 firstNum = secondNum;
                 secondNum = sum;
             }
-            System.out.println(n + "th fibonacci number is "+ sum);
-            
+            System.out.println(n + "th fibonacci number is " + sum);
+
         }
+    }
+
+    static void armstrongNumber(int n) {
+        int sum = 0;
+        int number = n;
+        while (n >= 1) {
+            int lastDigit = n % 10;
+            int cube = lastDigit * lastDigit * lastDigit;
+            sum += cube;
+            n /= 10;
+        }
+        if (sum == number) {
+            System.out.println("Armstrong Number.");
+        } else {
+            System.out.println("Not a armstrong");
+        }
+
+    }
+
+    static void reverseArray(int[] arr) {
+        int[] resultArray = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            resultArray[i] = arr[arr.length - 1 - i];
+            System.out.print(resultArray[i] + " ");
+        }
+    }
+
+    static void rotateArray(int[] arr, int k) {
+
+        for (int i = 0; i < k; i++) {
+            int first = arr[0];
+            for (int j = 0; j < arr.length - 1; j++) {
+                
+                arr[j] = arr[j + 1];
+            }
+            arr[arr.length - 1] = first;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + ",");
+        }
+
     }
 }
