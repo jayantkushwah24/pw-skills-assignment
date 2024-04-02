@@ -16,9 +16,9 @@ public class array {
         System.out.println(integers);
         */
 
-        int[] arr1 = {1,2,3,4,5,41,42,77,1,5,3,6,8};
-        int[] arr2 = {1,3,5,34,56,64,77,100,1,4,6,7};
-        intersectionOfArray(arr1, arr2);
+        int[] arr1 = {1,2,3,4,5};
+        int[] arr2 = {1,3,5};
+        addTwoArrays(arr1, arr2);
     }
     static void intersectionOfArray(int[] arr1 , int[] arr2){
         ArrayList<Integer> integers = new ArrayList<>();
@@ -51,5 +51,51 @@ public class array {
             }
         }
         System.out.println(integers);
+    }
+    static void addTwoArrays(int[] arr1 , int[] arr2){
+        int i = arr1.length -1;
+        int j = arr2.length - 1 ;
+        int carryNumber = 0 ;
+        ArrayList<Integer> sum = new ArrayList<>();
+        while(i >= 0 && j >= 0){
+           int temp = arr1[i] + arr2[j] + carryNumber;
+           sum.addFirst(temp % 10); 
+           carryNumber = (temp - (temp%10))/10 ;
+            i--; j--;
+        }
+        while(i >= 0 ){
+            sum.addFirst(arr1[i] + carryNumber);
+            carryNumber = 0;
+            i--;
+        }
+        while(j >= 0 ){
+            sum.addFirst(arr2[j] + carryNumber);
+            carryNumber = 0;
+            j--;  
+        }
+        System.out.println(sum);
+
+
+        /*
+        //optimized approach
+        int i = arr1.length -1;
+        int j = arr2.length - 1 ;
+        int carryNumber = 0 ;
+        ArrayList<Integer> ans = new ArrayList<>();
+        while(i >= 0 || j >= 0){
+            int sum = 0;
+            if(i >= 0){
+                sum += arr1[i];
+            }
+            if(j >= 0){
+                sum += arr2[j];
+            }
+            sum += carry;
+            int rem = sum %10;
+            carry = sum /10;
+           ans.add(0,rem); 
+            i--; j--;
+        }
+         */
     }
 }
