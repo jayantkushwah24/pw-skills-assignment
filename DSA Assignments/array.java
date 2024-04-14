@@ -16,33 +16,107 @@ public class array {
          * System.out.println(integers);
          */
 
-        int[] arr1 = { 1, 2, 3, 4, 5 };
+        int[] arr1 = {1,0,1,0,1,0,0,1,0,1 };
         int[] arr2 = { 1, 3, 5 };
         int[][] arr3 = {
-                { 1, 2, 3 },
-                { 4, 5, 6 },
-                { 7, 8, 9 }
+                { 1, 1, 1 },
+                { 1, 0, 1 },
+                { 1, 1, 1 }
         };
         int[][] arr4 = {
-                { 1, 2},
-                { 4, 5},
-                { 7, 8}
+                { 1, 2 },
+                { 4, 5 },
+                { 7, 8 }
         };
-        multiplicationOfMatrix(arr3,arr4);
+        sortBinaryArray(arr1);
     }
 
-    static void multiplicationOfMatrix(int[][] first , int[][] second){
+    static void sortBinaryArray(int[] nums){
+        int i=0;
+        int j=0;
+        while(i<nums.length){
+            if (nums[i] == 1 ) {
+                i++; 
+            }else{
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++; j++;
+            }
+            
+        }
+        for ( i = 0; i < nums.length; i++) {
+            System.out.print(nums[i]);
+        }
+    }
+
+    static void removeDuplicate(int[] nums){
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i-1] == nums[i]) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i]);
+        }
+    }
+
+    public static void setZeroes(int[][] matrix) {
+        boolean isRow = false;
+        boolean isCol = false;
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                    if (i == 0)
+                        isRow = true;
+                    if (j == 0)
+                        isCol = true;
+                }
+
+            }
+        }
+
+        for (int i = 01; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+        if (isCol) {
+            for (int i = 0; i < m; i++) {
+                matrix[i][0] = 0;
+            }
+        }
+
+        if (isRow) {
+            for (int j = 0; j < n; j++) {
+                matrix[0][j] = 0;
+            }
+        }
+
+    }
+
+    static void multiplicationOfMatrix(int[][] first, int[][] second) {
         int[][] result = new int[first.length][second[0].length];
         for (int i = 0; i < first.length; i++) {
-            
+
             for (int j = 0; j < second[0].length; j++) {
                 int sum = 0;
                 for (int j2 = 0; j2 < second.length; j2++) {
                     sum += first[i][j2] * second[j2][j];
-                }   
+                }
                 result[i][j] = sum;
             }
-           
+
         }
         for (int i = 0; i < result.length; i++) {
             for (int j = 0; j < result[0].length; j++) {
@@ -52,7 +126,7 @@ public class array {
         }
     }
 
-    static void transposeMatrix(int[][] arr){
+    static void transposeMatrix(int[][] arr) {
         int[][] result = new int[arr[0].length][arr.length];
         for (int i = 0; i < arr[0].length; i++) {
             for (int j = 0; j < arr.length; j++) {
@@ -61,11 +135,11 @@ public class array {
         }
         for (int i = 0; i < arr[0].length; i++) {
             for (int j = 0; j < arr.length; j++) {
-                 System.out.print(result[i][j] + ",");
+                System.out.print(result[i][j] + ",");
             }
             System.out.println();
         }
-        
+
     }
 
     static void printWaveArray(int[][] arr) {
@@ -77,7 +151,7 @@ public class array {
                 }
             } else {
                 // move up
-                for (int j = arr.length -1 ; j >= 0; j--) {
+                for (int j = arr.length - 1; j >= 0; j--) {
                     System.out.print(arr[j][i] + " ");
                 }
             }
