@@ -12,6 +12,106 @@ public class recursion {
         
     }
 
+     public static void selection(int[] array, int i, int j, int max) {
+        if (j == 0) {
+            return;
+        }
+        if (j > i) {
+            if (array[i] > max) {
+                selection(array, i + 1, j, array[i]);
+            }else{
+                selection(array, i+1, j, max);
+            }
+            
+        } else {
+            int temp = array[j];
+            array[j] = max;
+            max = temp;
+            selection(array, 0, j - 1, 0);
+        }
+    }
+
+    public static void bubble(int[] array, int i, int j) {
+        if (j == 0) {
+            return;
+        }
+        if (i > j) {
+            bubble(array, 1, j - 1);
+        } else {
+            if (array[i - 1] > array[i]) {
+                int temp = array[i];
+                array[i] = array[i - 1];
+                array[i - 1] = temp;
+            }
+            bubble(array, i + 1, j);
+        }
+
+    }
+
+    static void patt1(int row, int col) {
+        if (row == 0) {
+            return;
+        }
+        if (row <= col) {
+            System.out.println();
+            patt1(row - 1, 0);
+
+        } else {
+            System.out.print("*");
+            patt1(row, col + 1);
+        }
+    }
+
+    public static int rotatedBS(int[] array, int target, int start, int end) {
+        if (start > end) {
+            return -1;
+        }
+        int mid = start + (end - start) / 2;
+        if (array[mid] == target) {
+            return mid;
+        }
+        if (array[start] <= array[mid]) {
+            if (target >= array[start] && target <= array[mid]) {
+                return rotatedBS(array, target, start, mid - 1);
+            } else {
+                return rotatedBS(array, target, mid + 1, end);
+            }
+        }
+        if (target >= array[mid] && target <= array[end]) {
+            return rotatedBS(array, target, mid + 1, end);
+        }
+        return rotatedBS(array, target, start, mid - 1);
+
+    }
+
+    public static int linearSearch(int[] array, int target, int idx) {
+        if (idx >= array.length) {
+            return -1;
+        }
+        if (array[idx] == target) {
+            return idx;
+        }
+        return linearSearch(array, target, idx + 1);
+    }
+
+    public static boolean sorted(int[] arr, int start) {
+        if (start >= arr.length)
+            return true;
+        if (arr[start] < arr[start - 1]) {
+            return false;
+        }
+        return sorted(arr, start + 1);
+    }
+
+    public static int reverseNumber(int number, int result) {
+        if (number < 1) {
+            return result;
+        }
+        result = (result * 10) + (number % 10);
+        return reverseNumber(number / 10, result);
+    }
+
+
     public static int reverseNumber(int number , int result) {
         if (number < 1) {
             return result;
