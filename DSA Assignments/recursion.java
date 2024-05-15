@@ -12,6 +12,188 @@ public class recursion {
         
     }
 
+    public static void frogOnStone(int[] arr , int idx ,int cost){
+        if (idx >= arr.length-2) {
+            System.out.println(cost);
+            return;
+        }
+        int n1 = Math.abs(arr[idx]-arr[idx+1]);
+        int n2 = Math.abs(arr[idx]-arr[idx+2]);
+        if (n1 < n2 ) {
+            frogOnStone(arr, idx+1, cost + n1);
+        }else{
+            frogOnStone(arr, idx+2 , cost + n2);
+        }
+    }
+
+    public static char[] lettesArray = {' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    public static void encoded(String str, int idx , String output){
+        if (idx >= str.length()) {
+            System.out.println(output);
+            return;
+        }
+        encoded(str, idx+1, output+lettesArray[str.charAt(idx)-'0']);
+        if (idx <= str.length()-2) {
+            int twoDigits = Integer.parseInt(str.substring(idx, idx+2));
+            if(twoDigits <= 26 ){
+                encoded(str, idx+2, output + lettesArray[twoDigits]);
+            }
+        }
+        
+    }
+
+    public static int count = 0;
+    public static void findWays(int i, int j, int m, int n, String output) {
+        if (i == m - 1 && j == n - 1) {
+            System.out.println(output);
+            count++;
+            return;
+        }
+        if (i >= m || j >= n) {
+            return;
+        }
+        findWays(i, j + 1, m, n, output + "R");
+        findWays(i + 1, j, m, n, output + "D");
+    }
+
+    public static List<Integer> integer = new ArrayList<Integer>(); ;
+    public static void f(int n, int a ) {
+    if (a > n) {
+    return;
+    } else if(!integer.contains(a)) {
+    integer.add(a);
+    System.out.println(a);
+    }
+    f(n, a * 10);
+    if(a%10 != 9)
+    f(n, a + 1);
+    else return;
+    }
+
+    public static String skipChar(String str) {
+        if (str.length() == 0) {
+            return "";
+        }
+        char c = str.charAt(0);
+        if (c == 'a') {
+            return "" + skipChar(str.substring(1, str.length()));
+        } else {
+            return c + skipChar(str.substring(1, str.length()));
+        }
+    }
+
+    public static void quicksort(int[] array, int low, int hi) {
+        if (low >= hi) {
+            return;
+        }
+
+        int s = low;
+        int e = hi;
+        int mid = s + (e - s) / 2;
+        int pivot = array[mid];
+
+        while (s <= e) {
+            while (array[s] < pivot) {
+                s++;
+            }
+            while (array[e] > pivot) {
+                e--;
+            }
+            if (s <= e) {
+                int temp = array[s];
+                array[s] = array[e];
+                array[e] = temp;
+                s++;
+                e--;
+            }
+        }
+
+        quicksort(array, low, e);
+        quicksort(array, s, hi);
+
+    }
+
+    public static void mergeSort2(int[] arr, int s, int e) {
+        if (e - s == 1) {
+            return;
+        }
+        int mid = (s + e) / 2;
+        mergeSort2(arr, s, mid);
+        mergeSort2(arr, mid, e);
+        merge2(arr, s, mid, e);
+    }
+
+    private static void merge2(int[] arr, int s, int m, int e) {
+        int[] mix = new int[e - s];
+        int i = s;
+        int j = m;
+        int k = 0;
+        while (i < m && j < e) {
+            if (arr[i] < arr[j]) {
+                mix[k] = arr[i];
+                i++;
+            } else {
+                mix[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < m) {
+            mix[k] = arr[i];
+            i++;
+            k++;
+        }
+        while (j < e) {
+            mix[k] = arr[j];
+            ;
+            j++;
+            k++;
+        }
+        for (int l = 0; l < mix.length; l++) {
+            arr[s + l] = mix[l];
+        }
+    }
+
+    public static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) {
+            return arr;
+        }
+        int mid = arr.length / 2;
+        int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+        int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+        return merge(left, right);
+
+    }
+
+    private static int[] merge(int[] first, int[] second) {
+        int[] mix = new int[first.length + second.length];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < first.length && j < second.length) {
+            if (first[i] < second[j]) {
+                mix[k] = first[i];
+                i++;
+            } else {
+                mix[k] = second[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < first.length) {
+            mix[k] = first[i];
+            i++;
+            k++;
+        }
+        while (j < second.length) {
+            mix[k] = second[j];
+            ;
+            j++;
+            k++;
+        }
+        return mix;
+    }
+
      public static void selection(int[] array, int i, int j, int max) {
         if (j == 0) {
             return;
