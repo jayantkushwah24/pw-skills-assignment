@@ -1,6 +1,11 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class recursion {
     public static void main(String[] args) {
-        int[] array = { 3, 4, 5, 6, 7 };
+        int[] array = { 1, 5, 7 };
         // System.out.println(maxNumInArray(array, 0, -1));
         // printSquarePattern2(1,1,5);
         // printCharExceptX("XexperXt", 0);
@@ -8,41 +13,95 @@ public class recursion {
         // System.out.println(binarySearch(array, 3, 0, array.length - 1));
         // print(5);
         // System.out.println(sumOfdigit(12345));
-        System.out.println(reverseNumber(12345,0));
-        
+        // System.out.println(reverseNumber(12345,0));
+        // System.out.println(sorted(array, 1));
+        // System.out.println(linearSearch(array, 4, 0));
+        // System.out.println(rotatedBS(array, 10, 0, array.length-1));
+        // patt1(5, 0);
+        // quicksort(array, 0, array.length - 1);
+        // System.out.println(Arrays.toString(array));
+        // System.out.println(skipChar("abbcdabcdab"));
+        // subsequence("abc", 0, "");
+        // f(4999, 1);
+        // count = 0;
+        // findWays(0, 0, 3, 3, "");
+        // System.out.println(count);
+        // encoded("25114", 0, "");
+        // frogOnStone(array, 0, 0);
+        ans = Integer.MAX_VALUE;
+        noOfCoins(array, 11,0);
+        System.out.println(ans);
+        // steps=0;
+        // reduceNo(10);
+        // System.out.println(steps);
     }
 
-    public static void frogOnStone(int[] arr , int idx ,int cost){
-        if (idx >= arr.length-2) {
+    public static int steps = 0;
+    public static void reduceNo(int num){
+        if (num <= 0) {
+            return;
+        }
+        steps++;
+        if (num % 3 == 0) {
+            reduceNo(num/3);
+        }else if(num % 2 == 0) {
+            reduceNo(num/2);
+        }else{
+            reduceNo(num-1);
+        }
+    }
+
+    public static int ans = Integer.MAX_VALUE;
+    public static void noOfCoins(int[] arr, int sum,int total) {
+        if (sum == 0) {
+            if (total < ans) {
+                ans = total;
+            }
+            return;
+        }
+        if (sum < 0) {
+            return;
+        }
+
+        for (int j = 0; j < arr.length; j++) {
+            noOfCoins(arr, sum - arr[j], total+1);
+        }
+    }
+
+    public static void frogOnStone(int[] arr, int idx, int cost) {
+        if (idx >= arr.length - 2) {
             System.out.println(cost);
             return;
         }
-        int n1 = Math.abs(arr[idx]-arr[idx+1]);
-        int n2 = Math.abs(arr[idx]-arr[idx+2]);
-        if (n1 < n2 ) {
-            frogOnStone(arr, idx+1, cost + n1);
-        }else{
-            frogOnStone(arr, idx+2 , cost + n2);
+        int n1 = Math.abs(arr[idx] - arr[idx + 1]);
+        int n2 = Math.abs(arr[idx] - arr[idx + 2]);
+        if (n1 < n2) {
+            frogOnStone(arr, idx + 1, cost + n1);
+        } else {
+            frogOnStone(arr, idx + 2, cost + n2);
         }
     }
 
-    public static char[] lettesArray = {' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-    public static void encoded(String str, int idx , String output){
+    public static char[] lettesArray = { ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+            'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+    public static void encoded(String str, int idx, String output) {
         if (idx >= str.length()) {
             System.out.println(output);
             return;
         }
-        encoded(str, idx+1, output+lettesArray[str.charAt(idx)-'0']);
-        if (idx <= str.length()-2) {
-            int twoDigits = Integer.parseInt(str.substring(idx, idx+2));
-            if(twoDigits <= 26 ){
-                encoded(str, idx+2, output + lettesArray[twoDigits]);
+        encoded(str, idx + 1, output + lettesArray[str.charAt(idx) - '0']);
+        if (idx <= str.length() - 2) {
+            int twoDigits = Integer.parseInt(str.substring(idx, idx + 2));
+            if (twoDigits <= 26) {
+                encoded(str, idx + 2, output + lettesArray[twoDigits]);
             }
         }
-        
+
     }
 
     public static int count = 0;
+
     public static void findWays(int i, int j, int m, int n, String output) {
         if (i == m - 1 && j == n - 1) {
             System.out.println(output);
@@ -56,19 +115,19 @@ public class recursion {
         findWays(i + 1, j, m, n, output + "D");
     }
 
-    public static List<Integer> integer = new ArrayList<Integer>(); ;
-    public static void f(int n, int a ) {
-    if (a > n) {
-    return;
-    } else if(!integer.contains(a)) {
-    integer.add(a);
-    System.out.println(a);
-    }
-    f(n, a * 10);
-    if(a%10 != 9)
-    f(n, a + 1);
-    else return;
-    }
+    // public static List<Integer> integer = new ArrayList<Integer>(); ;
+    // public static void f(int n, int a ) {
+    // if (a > n) {
+    // return;
+    // } else if(!integer.contains(a)) {
+    // integer.add(a);
+    // System.out.println(a);
+    // }
+    // f(n, a * 10);
+    // if(a%10 != 9)
+    // f(n, a + 1);
+    // else return;
+    // }
 
     public static String skipChar(String str) {
         if (str.length() == 0) {
@@ -194,17 +253,17 @@ public class recursion {
         return mix;
     }
 
-     public static void selection(int[] array, int i, int j, int max) {
+    public static void selection(int[] array, int i, int j, int max) {
         if (j == 0) {
             return;
         }
         if (j > i) {
             if (array[i] > max) {
                 selection(array, i + 1, j, array[i]);
-            }else{
-                selection(array, i+1, j, max);
+            } else {
+                selection(array, i + 1, j, max);
             }
-            
+
         } else {
             int temp = array[j];
             array[j] = max;
@@ -293,28 +352,19 @@ public class recursion {
         return reverseNumber(number / 10, result);
     }
 
-
-    public static int reverseNumber(int number , int result) {
-        if (number < 1) {
-            return result;
-        }
-        result = (result*10) + (number%10);
-        return reverseNumber(number/10, result);
-    }
-
-    public static int sumOfdigit(int num){
+    public static int sumOfdigit(int num) {
         if (num < 1) {
             return 0;
         }
-        int lastdigit = num%10;
-        return lastdigit + sumOfdigit(num/10);
+        int lastdigit = num % 10;
+        return lastdigit + sumOfdigit(num / 10);
     }
 
     public static void print(int i) {
         if (i == 0) {
             return;
         }
-        print(i-1);
+        print(i - 1);
         System.out.println(i);
     }
 
