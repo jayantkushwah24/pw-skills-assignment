@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import { MakingAnApiCall } from './Components/MakingAnApiCall'
+// import { MakingAnApiCall } from './Components/MakingAnApiCall';
+// import { ApiCallOnButtonClick } from './Components/ApiCallOnButtonClick';
+import { ApiCallOnButtonWithHighlight } from './Components/ApiCallOnButtonWithHighlight';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <MakingAnApiCall />
+      {/* <MakingAnApiCall /> */}
+      {/* <ApiCallOnButtonClick /> */}
+      <ApiCallOnButtonWithHighlight />
     </>
   )
 }

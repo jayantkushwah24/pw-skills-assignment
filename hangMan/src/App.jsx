@@ -1,16 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+// import TextInputFormContainer from "./Components/TextInputFormContainer";
+import PlayGame from "./Components/PlayGame";
+import StartGame from "./Components/StartGame";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
+    // <div>
+    //   <h1 className="font-semibold text-3xl">Welcome to Hangman</h1>
+    //   <TextInputFormContainer onSubmit={(value) => console.log("Value coming from the hidden form is", value)} />
+    // </div>
+
     <>
-      <button className='h-10 w-20 bg-yellow-500' type='submit'>Submit</button>
+      <div>
+        Navbar
+      </div>
+      <Routes>
+        <Route path="/play" element={<PlayGame />} />
+        <Route path="/start" element={<StartGame />} />
+        <Route path="*" element={<div> not found </div>} />
+      </Routes>
     </>
-  )
+
+
+  );
 }
 
-export default App
+export default App;
