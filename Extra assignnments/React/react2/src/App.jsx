@@ -1,6 +1,7 @@
 // import { MakingAnApiCall } from './Components/MakingAnApiCall';
 // import { ApiCallOnButtonClick } from './Components/ApiCallOnButtonClick';
-import { ApiCallOnButtonWithHighlight } from './Components/ApiCallOnButtonWithHighlight';
+// import { ApiCallOnButtonWithHighlight } from './Components/ApiCallOnButtonWithHighlight';
+import UseEffectSuccessOnView from "./Components/UseEffectSuccessOnView"
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
     <>
       {/* <MakingAnApiCall /> */}
       {/* <ApiCallOnButtonClick /> */}
-      <ApiCallOnButtonWithHighlight />
+      {/* <ApiCallOnButtonWithHighlight /> */}
+      <UseEffectSuccessOnView />
     </>
   )
 }
