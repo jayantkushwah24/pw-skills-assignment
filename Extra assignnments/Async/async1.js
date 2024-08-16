@@ -89,9 +89,9 @@ const fakeFetch1 = (url) => {
 //   .then((response) => console.log(response))
 //   .catch((error) => {
 //     if (error.status === 404) {
-//       // displayOutput.textContent =
-//         console.log("The data you are looking for, does not exist.");
-
+//       displayOutput.textContent =
+// "The data you are looking for, does not exist.";
+//
 //     }
 //   });
 // Output on the DOM should be:
